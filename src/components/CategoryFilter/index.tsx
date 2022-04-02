@@ -13,7 +13,7 @@ function index() {
             setCategories([])
         }
     })
-    console.log("Categories ",categories)
+   // console.log("Categories ",categories)
   return (
     <ScrollView
         bounces={true}

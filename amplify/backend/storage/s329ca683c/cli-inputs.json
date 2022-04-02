@@ -1,0 +1,15 @@
+{
+  "resourceName": "s329ca683c",
+  "policyUUID": "29ca683c",
+  "bucketName": "letgoclone0b30d145d0434666bafc94cecb1316e1",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

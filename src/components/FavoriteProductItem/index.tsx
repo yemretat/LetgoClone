@@ -4,6 +4,8 @@ import { Product } from '../../models'
 import styles from "./styles"
 import { AntDesign } from '@expo/vector-icons'; 
 import {useNavigation} from "@react-navigation/native"
+import {Auth,DataStore} from "aws-amplify"
+import { FavoriteProduct } from '../../models';
 
 type productProps ={
     product: Product,
@@ -13,8 +15,22 @@ type productProps ={
 
 function index({product,prodType}:productProps) {
     const navgiation = useNavigation()
+    
+    const addToCart = async () => {
+        const userData = await Auth.currentAuthenticatedUser()
+       // console.log("User Data ",userData)
+        if(!userData)
+            return;
+        const newFavoriteProduct = new FavoriteProduct({
+            userSub:userData.attributes.sub,
+            productID:product.id
+        })
+        await DataStore.save(newFavoriteProduct)
+
+    }
+
   return (
-    <TouchableOpacity onPress={() => navgiation.navigate("ProductDetails",{product:product}) } style={prodType==="favorite" ? styles.favorite:styles.main}>
+    <TouchableOpacity onPress={() => navgiation.navigate("ProductDetails",{id:product.id}) } style={prodType==="favorite" ? styles.favorite:styles.main}>
         <View style={prodType==="favorite" ? styles.favoriteView:styles.mainView} >
             <Image
                 source={{uri:product.image}}
@@ -27,7 +43,7 @@ function index({product,prodType}:productProps) {
             </View>)
             }
 
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => addToCart()}>
             <AntDesign style={{position:'absolute',right:4,bottom:5}} name="heart" size={24} color="white" />
             </TouchableOpacity>
         </View>
