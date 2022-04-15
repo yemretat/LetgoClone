@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, Dimensions } from "react-native";
-import { Product } from "../../models";
+import { FavoriteProduct, Product } from "../../models";
 import { FontAwesome, Ionicons } from "@expo/vector-icons";
 const { height, width } = Dimensions.get("window");
 type favoriteItemProps = {
@@ -8,6 +8,7 @@ type favoriteItemProps = {
 };
 
 function index({ product }: favoriteItemProps) {
+ // console.log("The product is ",product)
   return (
     <View style={{borderColor:'#EAEAEA', borderWidth:2,shadowColor:'gray',shadowOpacity:0.12,padding:14, borderRadius:10,marginBottom:18,height:height*0.18}}>
       <View style={{ flexDirection: "row", alignItems: "center",paddingBottom:18,borderBottomWidth:1.2,borderBottomColor:'#dcdee0' }}>

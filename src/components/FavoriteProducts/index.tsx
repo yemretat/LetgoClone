@@ -3,14 +3,14 @@ import {View,ScrollView,Text} from "react-native"
 import styles from './styles'
 import { AntDesign } from '@expo/vector-icons'; 
 import productassets from "../../../assets/products"
-import {Product} from "../../models/index"
+import {Product} from "../../models"
 import FavoriteProductItem from "../../components/FavoriteProductItem"
-function index() {
 
-    const [products , setProducts] = useState<Product[]>([])
-    useEffect(() => {
-        setProducts(productassets)
-    },[])
+type FavoriteProductsType={
+    productArray:Product[]
+}
+
+function index({productArray}:FavoriteProductsType) {
 
    // console.log("The products x",products)
 
@@ -32,7 +32,7 @@ function index() {
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         >
-            {products.map((item) => {
+            {productArray.map((item) => {
                 return <FavoriteProductItem prodType='favorite' key={item.id} product={item}/>
             })}
         </ScrollView>

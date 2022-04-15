@@ -13,7 +13,12 @@ import CategoryFilterScreen from "../screens/CategoryFilterScreen";
 import { FontAwesome5, Ionicons, Entypo } from "@expo/vector-icons";
 import { useNavigation,getFocusedRouteNameFromRoute } from "@react-navigation/native";
 import ProductDetailsScreen from "../screens/ProductDetailsScreen";
+import {Auth} from "aws-amplify"
 const Stack = createStackNavigator();
+
+const onLogout = () => {
+  Auth.signOut()
+}
 
 const MainHeaderComponent = () => {
   return (
@@ -26,7 +31,7 @@ const MainHeaderComponent = () => {
         marginBottom: 10,
       }}
     >
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onLogout}>
         <Image
           style={{ width: 38, height: 38, borderRadius: 19 }}
           source={{
