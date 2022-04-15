@@ -10,19 +10,18 @@
 </p>
 
 
-<h1>
+<h2>
 📲 About
-</h1>
+</h2>
 
 In this tutorial, you will learn React Native with Expo and AWS Amplify from scratch by building a cross-platform (ios and android), full-stack Letgo clone. This project is a great way to get your foot in the door with hybrid, cross-platform mobile development with React Native and AWS Amplify with a real project example.
 
 This is a beginner-friendly tutorial, and all the steps and concepts will be explained in detail.
 
-<h1>
+<h2>
 <br />
 ⚒️ Core Tech Stack
-</h1>
-
+</h2>
 
 - 🔼 &nbsp; [Expo](https://expo.io/ 'Expo')
 - ⭐️ &nbsp; [React Native](https://reactnative.dev/ 'React Native')
@@ -34,10 +33,10 @@ This is a beginner-friendly tutorial, and all the steps and concepts will be exp
 
 - ➕ &nbsp; Bonus Features
 
-<h1>
+<h2>
 <br />
 💫 Main Features
-</h1>
+</h2>
 
 Mobil
 - ✅ How to start a React Native project from scratch using Expo
@@ -72,8 +71,9 @@ To run the project, run the following commands:
 - `yarn ios`
 
 
-<h1>
+<h2>
 <br />
 🚨 Disclaimer
-</h1>
+</h2>
+
 This build is for educational purposes only!! All views, opinions, technology choices expressed in this video are my own and do not represent the views, opinions, technology choices of any entity whatsoever with which I have been, am now, or will be affiliated
